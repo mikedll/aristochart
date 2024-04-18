@@ -15,7 +15,7 @@
  * @param {Object} options See Options.
  * @param {Object} theme A theme object. See Aristochart.themes.
  */
-var Aristochart = function(element, options, theme) {
+export var Aristochart = function(element, options, theme) {
 	// Sort out the default parameters
 	if(!element || !element.DOCUMENT_NODE) options = element, element = document.createElement("canvas");
 
