@@ -33,6 +33,16 @@ Aristochart's documentation is located at [http://dunxrion.github.com/aristochar
     
 Navigate to the examples.
 
+## Building
+
+    npm run build
+
+This will run esbuild to production the global installer.
+
+    ./minify.sh
+    
+This will produce the minified js from Aristochart.js.
+
 ## License
 The MIT License (MIT)
 
