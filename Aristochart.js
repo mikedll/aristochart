@@ -15,6 +15,7 @@
  * @param {Object} options See Options.
  * @param {Object} theme A theme object. See Aristochart.themes.
  */
+
 export var Aristochart = function(element, options, theme) {
 	// Sort out the default parameters
 	if(!element || !element.DOCUMENT_NODE) options = element, element = document.createElement("canvas");
@@ -315,8 +316,8 @@ Aristochart.prototype.getPoints = function(callback) {
 		by1 = this.box.y1, //Caching these variables in case of large datasets
 
 		Yorigin = by + ((by1/Yrange) * Ymax),
-		Xorigin = bx + ((bx1/Xrange) * Math.abs(Xmin));
-
+		Xorigin = bx;
+    
 	//Iterate over y1, y2 etc. lines
 	for(var key in this.data) {
 		if(key == "x") continue;
@@ -333,16 +334,15 @@ Aristochart.prototype.getPoints = function(callback) {
 		if(length > 100000) factor = 5000;
 
 		var count = length/factor;
-
 		for(var i = 0; i < count; i++) {
-			var x = ((Xrange/(count - 1)) * i) + Xmin,
+			var dx = ((Xrange/(count - 1)) * i),
 				y = currArr[i],
 
 				// Calculate the raster points
-				rx = Xorigin + ((bx1/Xrange) * x),
+				rx = Xorigin + ((bx1/Xrange) * dx),
 				ry = Yorigin - ((by1/Yrange) * y);
 
-			lines[key].push({x: x, y: y, rx: rx, ry: ry});
+			lines[key].push({x: dx, y: y, rx: rx, ry: ry});
 
 			if(callback) callback(rx, ry, x, y, key);
 		}
