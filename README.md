@@ -27,6 +27,12 @@ Aristochart has a simple enough interface. Plug in the canvas element (or placeh
 ## Documentation
 Aristochart's documentation is located at [http://dunxrion.github.com/aristochart](http://dunxrion.github.com/aristochart).
 
+## Running examples / testing
+
+    node_modules/.bin/http-server .
+    
+Navigate to the examples.
+
 ## License
 The MIT License (MIT)
 

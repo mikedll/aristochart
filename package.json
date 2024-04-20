@@ -1,0 +1,29 @@
+{
+  "name": "aristochart",
+  "version": "1.0.0",
+  "description": "Simple plotting library",
+  "main": "Aristochart.js",
+  "directories": {
+    "doc": "doc",
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "esbuild aristochart-global.js --bundle --outfile=Aristochart.js",
+    "buildw": "esbuild aristochart-global.js --bundle --outfile=Aristochart.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/adriancooney/aristochart.git"
+  },
+  "author": "Adrian Cooney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adriancooney/aristochart/issues"
+  },
+  "homepage": "https://github.com/adriancooney/aristochart#readme",
+  "devDependencies": {
+    "esbuild": "^0.20.2",
+    "http-server": "^14.1.1"
+  }
+}
